@@ -1,0 +1,14 @@
+<div id="draw" style="width: 900px; height: 600px; border: 1px solid red;" (mousedown)="coordinates($event, true)" (mouseup)="coordinates($event, false)">
+</div>
+
+<div *ngFor="let panel of panels; let i=index" [id]=createPanelId(i) accesskey="panel" class="panel" (click)="identifyElement($event)"
+  appMovable [isMovable]="movePanel()">
+  <div appMovableArea>
+    <h1>{{ panel.name }}</h1>
+    <button (click)="add(i)">Add</button>
+    <span *ngFor="let card of panel.cards; let j=index" [id]=createCardId(j) class="card" accesskey="card" (click)="identifyElement($event)"
+      appMovable [isMovable]="moveCard()" [style]=setStyle(card.status)>
+      {{ card.status }}
+    </span>
+  </div>
+</div>

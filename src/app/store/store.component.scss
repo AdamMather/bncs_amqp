@@ -1,0 +1,77 @@
+.skip {
+    position: absolute;
+    top: -1000px;
+    left: -1000px;
+    height: 1px;
+    width: 1px;
+    text-align: left;
+    overflow: hidden;
+}
+
+a.skip:active, 
+a.skip:focus, 
+a.skip:hover {
+    left: 0; 
+    top: 0;
+    width: auto; 
+    height: auto; 
+    overflow: visible; 
+}
+
+#bncs {
+    position: relative;
+    border: 1px solid black;
+    z-index: 0;
+}
+
+div[id^="panel"] > div { 
+    display: inline;
+    background: transparent;
+    color: rgba(136, 20, 26, 0.541);
+  }
+
+  div[name="panel"] {
+
+    display: block;
+    width: 200px;
+    height: 300px;
+
+  }
+
+  .panel {
+    background: #b4d455;
+    border: 1px solid black;
+    width: 300px;
+    height: 360px;
+    display: inline-block;
+    z-index: 0;
+
+    &.dragging {
+        background: coral;
+      }
+}
+
+.card {
+    background: #a555d4;
+    border: 1px solid black;
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+
+    z-index: 0;
+    
+}
+
+.draggable {
+    cursor: move;
+    user-select: none;
+}
+
+.area {
+    background: #C0FFEE;
+    padding: 40px;
+  }
+  
+  button {
+    margin-top: 20px;
+  }
